@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Falalu Creative Studio — Digital Experiences for Visionaries</title>
+    <meta name="description" content="Falalu Creative Studio designs architectural humanism digital experiences for luxury and high-performance brands. We blend technical precision with organic creative expression." />
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Falalu Creative Studio" />
+    <meta property="og:description" content="Digital experiences for brands ready to be seen differently." />
+    <meta property="og:image" content="https://res.cloudinary.com/dvpt87rho/image/upload/v1787785849/Screenshot_20260827_000905_Instagram_1_gelq1f.jpg" />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⬛</text></svg>" />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
+    
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    },
+                    colors: {
+                        canvas: {
+                            light: '#fafafa',
+                            dark: '#0a0a0a',
+                        },
+                        surface: {
+                            light: '#ffffff',
+                            dark: '#111111',
+                        },
+                        border: {
+                            light: '#e5e5e5',
+                            dark: '#262626',
+                        },
+                        text: {
+                            light: '#171717',
+                            dark: '#ededed',
+                        },
+                        muted: {
+                            light: '#737373',
+                            dark: '#a3a3a3',
+                        },
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '22': '5.5rem',
+                        '30': '7.5rem',
+                    },
+                    maxWidth: {
+                        'container': '1280px',
+                    },
+                    borderRadius: {
+                        'xl': '1rem',
+                        '2xl': '1.5rem',
+                    },
+                },
+            },
+        }
+    </script>
+    
+    <style>
+        body {
+            font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+        }
+        .noise-overlay {
+            position: absolute; inset: 0;
+            background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%220.015%22/%3E%3C/svg%3E');
+            pointer-events: none;
+            mix-blend-mode: multiply;
+        }
+        .transition-smooth {
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="bg-canvas-light dark:bg-canvas-dark text-text-light dark:text-text-dark font-sans antialiased min-h-screen selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
+    <!-- Navigation -->
+    <header class="fixed top-0 inset-x-0 z-50 bg-white/80 dark:bg-surface-dark/80 backdrop-blur-xl border-b border-border-light dark:border-border-dark">
+        <div class="max-w-container mx-auto px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <!-- Logo -->
+                <a href="/" class="flex items-center gap-2">
+                    <span class="font-semibold text-lg tracking-tight text-text-light dark:text-text-dark">Falalu</span>
+                    <span class="text-muted-light dark:text-muted-dark text-lg font-light">Studio</span>
+                </a>
+                
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a href="/work.html" class="text-text-light dark:text-text-dark hover:text-black dark:hover:text-white transition-colors">Work</a>
+                    <a href="/services.html" class="text-text-light dark:text-text-dark hover:text-black dark:hover:text-white transition-colors">Services</a>
+                    <a href="/about.html" class="text-text-light dark:text-text-dark hover:text-black dark:hover:text-white transition-colors">About</a>
+                    <a href="/process.html" class="text-text-light dark:text-text-dark hover:text-black dark:hover:text-white transition-colors">Process</a>
+                    <a href="/contact.html" class="text-text-light dark:text-text-dark hover:text-black dark:hover:text-white transition-colors">Contact</a>
+                </nav>
+                
+                <!-- Right actions -->
+                <div class="flex items-center gap-4">
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-text-light dark:text-text-dark" aria-label="Toggle dark mode">
+                        <span class="material-symbols-outlined text-xl">dark_mode</span>
+                    </button>
+                    <a href="/contact.html" class="hidden sm:inline-flex items-center justify-center rounded-full bg-black text-white px-5 py-2.5 text-sm font-medium hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition-colors">
+                        Start a Project
+                    </a>
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md hover:bg-black/5 dark:hover:bg-white/10 text-text-light dark:text-text-dark" aria-label="Menu">
+                        <span class="material-symbols-outlined text-2xl">menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white dark:bg-surface-dark backdrop-blur-2xl flex flex-col items-center justify-center gap-6 transform -translate-y-full transition-transform duration-300 md:hidden">
+        <a href="/work.html" class="text-3xl font-semibold text-text-light dark:text-text-dark">Work</a>
+        <a href="/services.html" class="text-3xl font-semibold text-text-light dark:text-text-dark">Services</a>
+        <a href="/about.html" class="text-3xl font-semibold text-text-light dark:text-text-dark">About</a>
+        <a href="/process.html" class="text-3xl font-semibold text-text-light dark:text-text-dark">Process</a>
+        <a href="/contact.html" class="text-3xl font-semibold text-text-light dark:text-text-dark">Contact</a>
+        <a href="/contact.html" class="mt-4 inline-flex items-center justify-center rounded-full bg-black text-white px-8 py-3 text-lg font-medium dark:bg-white dark:text-black">Start a Project</a>
+        <button id="mobile-close-btn" class="absolute top-6 right-6 p-2 text-text-light dark:text-text-dark" aria-label="Close menu">
+            <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+    </div>
+
+    <main class="pt-16">
+        <!-- Hero Section -->
+        <section class="relative">
+            <div class="max-w-container mx-auto px-6 lg:px-8 pt-20 pb-24 md:pt-32 md:pb-32">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-7">
+                        <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] text-text-light dark:text-text-dark">
+                            Digital experiences for brands ready to be seen differently
+                        </h1>
+                        <p class="mt-6 text-lg md:text-xl text-muted-light dark:text-muted-dark max-w-xl leading-relaxed">
+                            We synthesize rigorous technical precision with organic creative expression to build digital flagships for visionaries.
+                        </p>
+                        <div class="mt-8 flex flex-wrap gap-4">
+                            <a href="/work.html" class="inline-flex items-center justify-center rounded-full bg-black text-white px-8 py-3.5 text-sm font-medium hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition-colors">
+                                View Our Work
+                            </a>
+                            <a href="/contact.html" class="inline-flex items-center justify-center rounded-full border border-gray-300 dark:border-gray-600 text-text-light dark:text-text-dark px-8 py-3.5 text-sm font-medium hover:border-black dark:hover:border-white transition-colors">
+                                Get in Touch
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5">
+                        <div class="relative rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-800 aspect-[4/5]">
+                            <img alt="Falalu Creative Studio CEO"
+                                 class="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-700 scale-105 hover:scale-100"
+                                 src="https://res.cloudinary.com/dvpt87rho/image/upload/v1787785849/Screenshot_20260827_000905_Instagram_1_gelq1f.jpg"
+                                 loading="lazy" />
+                            <div class="noise-overlay"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divider -->
+        <div class="max-w-container mx-auto px-6 lg:px-8">
+            <hr class="border-border-light dark:border-border-dark" />
+        </div>
+
+        <!-- Statement Section -->
+        <section class="py-24 md:py-32">
+            <div class="max-w-container mx-auto px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-text-light dark:text-text-dark">
+                        Your website is often the first impression. Make it count.
+                    </h2>
+                    <p class="mt-6 text-lg text-muted-light dark:text-muted-dark">
+                        Three core principles guide every engagement.
+                    </p>
+                </div>
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="p-8 rounded-xl bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark">
+                        <div class="w-10 h-10 rounded-full bg-black dark:bg-white flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-white dark:text-black text-xl">target</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-text-light dark:text-text-dark mb-2">Strategy</h3>
+                        <p class="text-muted-light dark:text-muted-dark leading-relaxed">
+                            Defining the structural narrative before a single pixel is placed. We map the journey to align with high-end brand expectations.
+                        </p>
+                    </div>
+                    <div class="p-8 rounded-xl bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark">
+                        <div class="w-10 h-10 rounded-full bg-black dark:bg-white flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-white dark:text-black text-xl">format_paint</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-text-light dark:text-text-dark mb-2">Design</h3>
+                        <p class="text-muted-light dark:text-muted-dark leading-relaxed">
+                            Architectural humanism applied to digital space. Expansive whitespace, intentional asymmetry, and magnetic interactions.
+                        </p>
+                    </div>
+                    <div class="p-8 rounded-xl bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark">
+                        <div class="w-10 h-10 rounded-full bg-black dark:bg-white flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-white dark:text-black text-xl">bolt</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-text-light dark:text-text-dark mb-2">Performance</h3>
+                        <p class="text-muted-light dark:text-muted-dark leading-relaxed">
+                            Flawless execution. Fluid grids and optimized delivery ensuring the experience is as seamless as it is visually arresting.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Selected Work -->
+        <section class="py-24 md:py-32 bg-gray-50 dark:bg-surface-dark/50">
+            <div class="max-w-container mx-auto px-6 lg:px-8">
+                <div class="flex flex-wrap items-end justify-between mb-12">
+                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-text-light dark:text-text-dark">Selected Work</h2>
+                    <a href="/work.html" class="text-sm font-medium text-muted-light dark:text-muted-dark hover:text-black dark:hover:text-white transition-colors">
+                        View All Projects →
+                    </a>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                    <!-- Project 1 -->
+                    <div class="md:col-span-8 group">
+                        <a href="#" class="block rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800">
+                            <div class="aspect-[4/3] overflow-hidden">
+                                <img alt="Aura Retreat" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                                     src="https://res.cloudinary.com/dvpt87rho/image/upload/v1787924311/ChatGPT_Image_Aug_28_2026_02_30_53_PM_yd9k64.png"
+                                     loading="lazy" />
+                            </div>
+                        </a>
+                        <div class="mt-4">
+                            <h3 class="text-xl font-semibold text-text-light dark:text-text-dark">Aura Retreat</h3>
+                            <p class="text-muted-light dark:text-muted-dark mt-1">Hospitality / Digital Flagship</p>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="md:col-span-4 md:mt-16 group">
+                        <a href="#" class="block rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800">
+                            <div class="aspect-[3/4] overflow-hidden">
+                                <img alt="Maison Blanc" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                                     src="https://res.cloudinary.com/dvpt87rho/image/upload/v1787924322/ChatGPT_Image_Aug_28_2026_02_33_48_PM_hlujep.png"
+                                     loading="lazy" />
+                            </div>
+                        </a>
+                        <div class="mt-4">
+                            <h3 class="text-xl font-semibold text-text-light dark:text-text-dark">Maison Blanc</h3>
+                            <p class="text-muted-light dark:text-muted-dark mt-1">Gastronomy / Identity</p>
+                        </div>
+                    </div>
+                    <!-- Project 3 -->
+                    <div class="md:col-span-5 group">
+                        <a href="#" class="block rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800">
+                            <div class="aspect-square overflow-hidden">
+                                <img alt="VÉLURE" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                                     src="https://res.cloudinary.com/dvpt87rho/image/upload/v1787924332/ChatGPT_Image_Aug_28_2026_02_35_27_PM_dmvdew.png"
+                                     loading="lazy" />
+                            </div>
+                        </a>
+                        <div class="mt-4">
+                            <h3 class="text-xl font-semibold text-text-light dark:text-text-dark">VÉLURE</h3>
+                            <p class="text-muted-light dark:text-muted-dark mt-1">Fashion / E-Commerce</p>
+                        </div>
+                    </div>
+                    <!-- Project 4 -->
+                    <div class="md:col-span-6 md:col-start-7 md:-mt-16 group">
+                        <a href="#" class="block rounded-xl overflow-hidden bg-gray-200 dark:bg-gray-800">
+                            <div class="aspect-[16/9] overflow-hidden">
+                                <img alt="The Obsidian" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                                     src="https://res.cloudinary.com/dvpt87rho/image/upload/v1787924339/ChatGPT_Image_Aug_28_2026_02_37_17_PM_p8r8xi.png"
+                                     loading="lazy" />
+                            </div>
+                        </a>
+                        <div class="mt-4">
+                            <h3 class="text-xl font-semibold text-text-light dark:text-text-dark">The Obsidian</h3>
+                            <p class="text-muted-light dark:text-muted-dark mt-1">Real Estate / Immersive Tour</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Preview -->
+        <section class="py-24 md:py-32">
+            <div class="max-w-container mx-auto px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                    <div>
+                        <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-text-light dark:text-text-dark">Expertise</h2>
+                        <p class="mt-6 text-lg text-muted-light dark:text-muted-dark max-w-md">
+                            We focus on a select few disciplines to ensure absolute mastery and unmatched quality.
+                        </p>
+                    </div>
+                    <div class="flex flex-col divide-y divide-border-light dark:divide-border-dark">
+                        <a href="/services.html" class="py-6 group flex items-center justify-between">
+                            <h3 class="text-xl md:text-2xl font-semibold text-text-light dark:text-text-dark group-hover:translate-x-2 transition-transform">Landing Pages</h3>
+                            <span class="material-symbols-outlined text-muted-light dark:text-muted-dark group-hover:rotate-45 transition-transform">arrow_forward</span>
+                        </a>
+                        <a href="/services.html" class="py-6 group flex items-center justify-between">
+                            <h3 class="text-xl md:text-2xl font-semibold text-text-light dark:text-text-dark group-hover:translate-x-2 transition-transform">Business Websites</h3>
+                            <span class="material-symbols-outlined text-muted-light dark:text-muted-dark group-hover:rotate-45 transition-transform">arrow_forward</span>
+                        </a>
+                        <a href="/services.html" class="py-6 group flex items-center justify-between">
+                            <h3 class="text-xl md:text-2xl font-semibold text-text-light dark:text-text-dark group-hover:translate-x-2 transition-transform">Custom Experiences</h3>
+                            <span class="material-symbols-outlined text-muted-light dark:text-muted-dark group-hover:rotate-45 transition-transform">arrow_forward</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophy -->
+        <section class="py-24 md:py-40 bg-gray-50 dark:bg-surface-dark/50">
+            <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+                <h2 class="text-4xl md:text-6xl font-bold tracking-tight text-text-light dark:text-text-dark">
+                    Beautiful is good.<br/>
+                    <span class="text-muted-light dark:text-muted-dark">Useful is better.</span><br/>
+                    <span class="italic font-medium">Beautiful + useful is the goal.</span>
+                </h2>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="py-24 md:py-32">
+            <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+                <h2 class="text-4xl md:text-6xl font-bold tracking-tight text-text-light dark:text-text-dark">
+                    Let's build something worth clicking.
+                </h2>
+                <p class="mt-6 text-lg text-muted-light dark:text-muted-dark">
+                    Start a conversation and discover how we can elevate your digital presence.
+                </p>
+                <a href="/contact.html" class="mt-10 inline-flex items-center justify-center rounded-full bg-black text-white px-10 py-4 text-base font-medium hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition-colors">
+                    Start the Conversation
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-16">
+        <div class="max-w-container mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
+            <div>
+                <div class="text-2xl font-semibold">Falalu Creative Studio</div>
+                <p class="text-gray-400 text-sm mt-2 max-w-md">
+                    © 2024 Falalu Creative Studio. All rights reserved. Built with architectural humanism.
+                </p>
+            </div>
+            <div class="flex flex-wrap gap-x-8 gap-y-4 text-sm">
+                <a href="#" class="text-gray-300 hover:text-white transition-colors">WhatsApp</a>
+                <a href="#" class="text-gray-300 hover:text-white transition-colors">Mail</a>
+                <a href="#" class="text-gray-300 hover:text-white transition-colors">X</a>
+                <a href="#" class="text-gray-300 hover:text-white transition-colors">Instagram</a>
+                <a href="#" class="text-gray-300 hover:text-white transition-colors">TikTok</a>
+                <a href="#" class="text-gray-300 hover:text-white transition-colors">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const root = document.documentElement;
+        
+        function getStoredTheme() {
+            try {
+                return localStorage.getItem('theme') || 'dark';
+            } catch (e) {
+                return 'dark';
+            }
+        }
+        function setStoredTheme(theme) {
+            try {
+                localStorage.setItem('theme', theme);
+            } catch (e) {}
+        }
+        
+        const storedTheme = getStoredTheme();
+        root.classList.toggle('dark', storedTheme === 'dark');
+        updateThemeIcon(storedTheme === 'dark');
+        
+        themeToggle?.addEventListener('click', () => {
+            const isDark = root.classList.toggle('dark');
+            setStoredTheme(isDark ? 'dark' : 'light');
+            updateThemeIcon(isDark);
+        });
+        
+        function updateThemeIcon(isDark) {
+            if (!themeToggle) return;
+            const icon = themeToggle.querySelector('.material-symbols-outlined');
+            if (icon) icon.textContent = isDark ? 'light_mode' : 'dark_mode';
+        }
+        
+        // Mobile menu toggle (works both ways)
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileCloseBtn = document.getElementById('mobile-close-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        function toggleMobileMenu(open) {
+            if (open) {
+                mobileMenu.style.transform = 'translateY(0)';
+            } else {
+                mobileMenu.style.transform = 'translateY(-100%)';
+            }
+        }
+        
+        mobileMenuBtn?.addEventListener('click', () => {
+            const isOpen = mobileMenu.style.transform === 'translateY(0px)' || mobileMenu.style.transform === 'translateY(0)';
+            toggleMobileMenu(!isOpen);
+        });
+        
+        mobileCloseBtn?.addEventListener('click', () => toggleMobileMenu(false));
+        
+        mobileMenu?.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => toggleMobileMenu(false));
+        });
+    </script>
+</body>
+</html>
