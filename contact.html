@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — Falalu Creative Studio</title>
+    <meta name="description" content="Get in touch with Falalu Creative Studio. Tell us about your project and we'll get back to you within 24 hours." />
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Contact — Falalu Creative Studio" />
+    <meta property="og:description" content="Tell us about your project and we'll get back to you within 24 hours." />
+    <meta property="og:image" content="https://res.cloudinary.com/dvpt87rho/image/upload/v1787785849/Screenshot_20260827_000905_Instagram_1_gelq1f.jpg" />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⬛</text></svg>" />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
+    
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    },
+                    colors: {
+                        canvas: {
+                            light: '#fafafa',
+                            dark: '#0a0a0a',
+                        },
+                        surface: {
+                            light: '#ffffff',
+                            dark: '#111111',
+                        },
+                        border: {
+                            light: '#e5e5e5',
+                            dark: '#262626',
+                        },
+                        text: {
+                            light: '#171717',
+                            dark: '#ededed',
+                        },
+                        muted: {
+                            light: '#737373',
+                            dark: '#a3a3a3',
+                        },
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '22': '5.5rem',
+                        '30': '7.5rem',
+                    },
+                    maxWidth: {
+                        'container': '1280px',
+                    },
+                    borderRadius: {
+                        'xl': '1rem',
+                        '2xl': '1.5rem',
+                    },
+                },
+            },
+        }
+    </script>
+    
+    <style>
+        body {
+            font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+        }
+        .noise-overlay {
+            position: absolute; inset: 0;
+            background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%220.015%22/%3E%3C/svg%3E');
+            pointer-events: none;
+            mix-blend-mode: multiply;
+        }
+        .transition-smooth {
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .input-field {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border: 1px solid #e5e5e5;
+            background: white;
+            color: #171717;
+            font-size: 16px;
+            transition: border-color 0.2s;
+        }
+        .dark .input-field {
+            background: #1a1a1a;
+            border-color: #262626;
+            color: #ededed;
+        }
+        .input-field:focus {
+            outline: none;
+            border-color: #000;
+        }
+        .dark .input-field:focus {
+            border-color: #fff;
+        }
+        .input-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 6px;
+            color: #171717;
+        }
+        .dark .input-label {
+            color: #ededed;
+        }
+        .social-icon {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+        .form-success {
+            display: none;
+        }
+        .form-success.show {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-canvas-light dark:bg-canvas-dark text-text-light dark:text-text-dark font-sans antialiased min-h-screen selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
+    <!-- Navigation -->
+    <header class="fixed top-0 inset-x-0 z-50 bg-white/80 dark:bg-surface-dark/80 backdrop-blur-xl border-b border-border-light dark:border-border-dark">
+        <div class="max-w-container mx-auto px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <!-- Logo -->
+                <a href="/" class="flex items-center gap-2">
+                    <span class="font-semibold text-lg tracking-tight text-text-light dark:text-text-dark">Falalu</span>
+                    <span class="text-muted-light dark:text-muted-dark text-lg font-light">Studio</span>
+                </a>
+                
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a href="/work.html" class="text-text-light dark:text-text-dark hover:text-black dark:hover:text-white transition-colors">Work</a>
+                    <a href="/services.html" class="text-text-light dark:text-text-dark hover:text-black dark:hover:text-white transition-colors">Services</a>
+                    <a href="/about.html" class="text-text-light dark:text-text-dark hover:text-black dark:hover:text-white transition-colors">About</a>
+                    <a href="/process.html" class="text-text-light dark:text-text-dark hover:text-black dark:hover:text-white transition-colors">Process</a>
+                    <a href="/contact.html" class="text-text-light dark:text-text-dark border-b-2 border-black dark:border-white pb-1 font-semibold">Contact</a>
+                </nav>
+                
+                <!-- Right actions -->
+                <div class="flex items-center gap-4">
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-text-light dark:text-text-dark" aria-label="Toggle dark mode">
+                        <span class="material-symbols-outlined text-xl">dark_mode</span>
+                    </button>
+                    <a href="/contact.html" class="hidden sm:inline-flex items-center justify-center rounded-full bg-black text-white px-5 py-2.5 text-sm font-medium hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition-colors">
+                        Start a Project
+                    </a>
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md hover:bg-black/5 dark:hover:bg-white/10 text-text-light dark:text-text-dark" aria-label="Menu">
+                        <span class="material-symbols-outlined text-2xl">menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white dark:bg-surface-dark backdrop-blur-2xl flex flex-col items-center justify-center gap-6 transform -translate-y-full transition-transform duration-300 md:hidden">
+        <a href="/work.html" class="text-3xl font-semibold text-text-light dark:text-text-dark">Work</a>
+        <a href="/services.html" class="text-3xl font-semibold text-text-light dark:text-text-dark">Services</a>
+        <a href="/about.html" class="text-3xl font-semibold text-text-light dark:text-text-dark">About</a>
+        <a href="/process.html" class="text-3xl font-semibold text-text-light dark:text-text-dark">Process</a>
+        <a href="/contact.html" class="text-3xl font-semibold text-text-light dark:text-text-dark">Contact</a>
+        <a href="/contact.html" class="mt-4 inline-flex items-center justify-center rounded-full bg-black text-white px-8 py-3 text-lg font-medium dark:bg-white dark:text-black">Start a Project</a>
+        <button id="mobile-close-btn" class="absolute top-6 right-6 p-2 text-text-light dark:text-text-dark" aria-label="Close menu">
+            <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+    </div>
+
+    <main class="pt-16">
+        <!-- Page Header -->
+        <section class="relative">
+            <div class="max-w-container mx-auto px-6 lg:px-8 pt-20 pb-16 md:pt-32 md:pb-24">
+                <div class="max-w-3xl">
+                    <p class="text-sm font-medium text-muted-light dark:text-muted-dark uppercase tracking-widest mb-4">Contact</p>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-text-light dark:text-text-dark">
+                        Let's start a conversation.
+                    </h1>
+                    <p class="mt-6 text-lg md:text-xl text-muted-light dark:text-muted-dark max-w-2xl leading-relaxed">
+                        Tell us about your project, goals, and timeline. We'll get back to you within 24 hours to schedule an initial consultation.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Content -->
+        <section class="pb-24 md:pb-32">
+            <div class="max-w-container mx-auto px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    <!-- Form -->
+                    <div class="lg:col-span-7">
+                        <form id="contact-form" action="https://formspree.io/f/maeyylpn" method="POST" class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="name" class="input-label">Name</label>
+                                    <input type="text" id="name" name="name" required class="input-field" placeholder="Your full name">
+                                </div>
+                                <div>
+                                    <label for="email" class="input-label">Email</label>
+                                    <input type="email" id="email" name="email" required class="input-field" placeholder="you@example.com">
+                                </div>
+                            </div>
+                            <div>
+                                <label for="business" class="input-label">Business / Brand (optional)</label>
+                                <input type="text" id="business" name="business" class="input-field" placeholder="Company name">
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="project-type" class="input-label">Project Type</label>
+                                    <select id="project-type" name="project-type" class="input-field">
+                                        <option value="" disabled selected>Select an option</option>
+                                        <option value="landing">Landing Page</option>
+                                        <option value="business">Business Website</option>
+                                        <option value="custom">Custom Experience</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="budget" class="input-label">Estimated Budget</label>
+                                    <select id="budget" name="budget" class="input-field">
+                                        <option value="" disabled selected>Select range</option>
+                                        <option value="1k-5k">$1k - $5k</option>
+                                        <option value="5k-10k">$5k - $10k</option>
+                                        <option value="10k-25k">$10k - $25k</option>
+                                        <option value="25k+">$25k+</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="details" class="input-label">Project Details</label>
+                                <textarea id="details" name="details" rows="5" class="input-field" placeholder="Tell us about your goals, timeline, and any specific requirements..."></textarea>
+                            </div>
+                            <button type="submit" class="inline-flex items-center justify-center rounded-full bg-black text-white px-8 py-4 text-base font-medium hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition-colors">
+                                Submit Inquiry
+                            </button>
+                        </form>
+                        <!-- Success Message -->
+                        <div id="form-success" class="form-success mt-6 p-6 rounded-xl bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800">
+                            <p class="text-green-800 dark:text-green-200 font-medium">Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.</p>
+                        </div>
+                    </div>
+                    <!-- Direct Contact & Socials -->
+                    <div class="lg:col-span-4 lg:col-start-9">
+                        <div class="space-y-8">
+                            <div>
+                                <h2 class="text-lg font-semibold text-text-light dark:text-text-dark mb-4">Direct Contact</h2>
+                                <ul class="space-y-3">
+                                    <li>
+                                        <a href="mailto:falaluladan736@gmail.com" class="flex items-center gap-3 text-muted-light dark:text-muted-dark hover:text-black dark:hover:text-white transition-colors">
+                                            <span class="material-symbols-outlined text-lg">mail</span>
+                                            falaluladan736@gmail.com
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://wa.me/2348065883643" target="_blank" rel="noopener" class="flex items-center gap-3 text-muted-light dark:text-muted-dark hover:text-black dark:hover:text-white transition-colors">
+                                            <span class="material-symbols-outlined text-lg">chat</span>
+                                            +234 806 588 3643
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h2 class="text-lg font-semibold text-text-light dark:text-text-dark mb-4">Connect</h2>
+                                <ul class="space-y-3">
+                                    <li>
+                                        <a href="https://www.instagram.com/ladan____falalu?igsi=MXF4OWQ2emVxdmF1cw==" target="_blank" rel="noopener" class="flex items-center gap-3 text-muted-light dark:text-muted-dark hover:text-black dark:hover:text-white transition-colors">
+                                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                            Instagram
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://x.com/ladan_falalu0" target="_blank" rel="noopener" class="flex items-center gap-3 text-muted-light dark:text-muted-dark hover:text-black dark:hover:text-white transition-colors">
+                                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                                            X (Twitter)
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.linkedin.com/in/falalu-ishaq-ladan-492157341?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener" class="flex items-center gap-3 text-muted-light dark:text-muted-dark hover:text-black dark:hover:text-white transition-colors">
+                                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                            LinkedIn
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.tiktok.com/@ladan_falalu?_r=1&_t=ZS-99GGYIGiZRH" target="_blank" rel="noopener" class="flex items-center gap-3 text-muted-light dark:text-muted-dark hover:text-black dark:hover:text-white transition-colors">
+                                            <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                                            TikTok
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h2 class="text-lg font-semibold text-text-light dark:text-text-dark mb-4">Location</h2>
+                                <p class="text-muted-light dark:text-muted-dark">Based in Nigeria, working worldwide.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-16">
+        <div class="max-w-container mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
+            <div>
+                <div class="text-2xl font-semibold">Falalu Creative Studio</div>
+                <p class="text-gray-400 text-sm mt-2 max-w-md">
+                    © 2024 Falalu Creative Studio. All rights reserved. Built with architectural humanism.
+                </p>
+            </div>
+            <div class="flex flex-wrap gap-6">
+                <a href="https://wa.me/2348065883643" target="_blank" rel="noopener" aria-label="WhatsApp" class="text-gray-300 hover:text-white transition-colors">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                </a>
+                <a href="mailto:falaluladan736@gmail.com" aria-label="Mail" class="text-gray-300 hover:text-white transition-colors">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg>
+                </a>
+                <a href="https://x.com/ladan_falalu0" target="_blank" rel="noopener" aria-label="X" class="text-gray-300 hover:text-white transition-colors">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/ladan____falalu?igsi=MXF4OWQ2emVxdmF1cw==" target="_blank" rel="noopener" aria-label="Instagram" class="text-gray-300 hover:text-white transition-colors">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </a>
+                <a href="https://www.tiktok.com/@ladan_falalu?_r=1&_t=ZS-99GGYIGiZRH" target="_blank" rel="noopener" aria-label="TikTok" class="text-gray-300 hover:text-white transition-colors">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/falalu-ishaq-ladan-492157341?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener" aria-label="LinkedIn" class="text-gray-300 hover:text-white transition-colors">
+                    <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const root = document.documentElement;
+        
+        function getStoredTheme() {
+            try {
+                return localStorage.getItem('theme') || 'dark';
+            } catch (e) {
+                return 'dark';
+            }
+        }
+        function setStoredTheme(theme) {
+            try {
+                localStorage.setItem('theme', theme);
+            } catch (e) {}
+        }
+        
+        const storedTheme = getStoredTheme();
+        root.classList.toggle('dark', storedTheme === 'dark');
+        updateThemeIcon(storedTheme === 'dark');
+        
+        themeToggle?.addEventListener('click', () => {
+            const isDark = root.classList.toggle('dark');
+            setStoredTheme(isDark ? 'dark' : 'light');
+            updateThemeIcon(isDark);
+        });
+        
+        function updateThemeIcon(isDark) {
+            if (!themeToggle) return;
+            const icon = themeToggle.querySelector('.material-symbols-outlined');
+            if (icon) icon.textContent = isDark ? 'light_mode' : 'dark_mode';
+        }
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileCloseBtn = document.getElementById('mobile-close-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        function toggleMobileMenu(open) {
+            if (open) {
+                mobileMenu.style.transform = 'translateY(0)';
+            } else {
+                mobileMenu.style.transform = 'translateY(-100%)';
+            }
+        }
+        
+        mobileMenuBtn?.addEventListener('click', () => {
+            const isOpen = mobileMenu.style.transform === 'translateY(0px)' || mobileMenu.style.transform === 'translateY(0)';
+            toggleMobileMenu(!isOpen);
+        });
+        
+        mobileCloseBtn?.addEventListener('click', () => toggleMobileMenu(false));
+        
+        mobileMenu?.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => toggleMobileMenu(false));
+        });
+
+        // Formspree AJAX integration
+        const contactForm = document.getElementById('contact-form');
+        const successMessage = document.getElementById('form-success');
+        
+        contactForm?.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(contactForm);
+            
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    successMessage.classList.add('show');
+                    contactForm.reset();
+                    setTimeout(() => {
+                        successMessage.classList.remove('show');
+                    }, 5000);
+                } else {
+                    alert('Something went wrong. Please try again.');
+                }
+            } catch (error) {
+                alert('Network error. Please try again later.');
+            }
+        });
+    </script>
+</body>
+</html>
