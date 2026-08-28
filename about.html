@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About — Falalu Creative Studio</title>
+    <meta name="description" content="Falalu Creative Studio is built on architectural humanism — bridging raw technological capability with refined human experience." />
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="About — Falalu Creative Studio" />
+    <meta property="og:description" content="Architectural humanism applied to digital space." />
+    <meta property="og:image" content="https://res.cloudinary.com/dvpt87rho/image/upload/v1787785849/Screenshot_20260827_000905_Instagram_1_gelq1f.jpg" />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⬛</text></svg>" />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
+    
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    },
+                    colors: {
+                        canvas: {
+                            light: '#fafafa',
+                            dark: '#0a0a0a',
+                        },
+                        surface: {
+                            light: '#ffffff',
+                            dark: '#111111',
+                        },
+                        border: {
+                            light: '#e5e5e5',
+                            dark: '#262626',
+                        },
+                        text: {
+                            light: '#171717',
+                            dark: '#ededed',
+                        },
+                        muted: {
+                            light: '#737373',
+                            dark: '#a3a3a3',
+                        },
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '22': '5.5rem',
+                        '30': '7.5rem',
+                    },
+                    maxWidth: {
+                        'container': '1280px',
+                    },
+                    borderRadius: {
+                        'xl': '1rem',
+                        '2xl': '1.5rem',
+                    },
+                },
+            },
+        }
+    </script>
+    
+    <style>
+        body {
+            font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+        }
+        .noise-overlay {
+            position: absolute; inset: 0;
+            background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%220.015%22/%3E%3C/svg%3E');
+            pointer-events: none;
+            mix-blend-mode: multiply;
+        }
+        .transition-smooth {
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="bg-canvas-light dark:bg-canvas-dark text-text-light dark:text-text-dark font-sans antialiased min-h-screen selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
+    <!-- Navigation -->
+    <header class="fixed top-0 inset-x-0 z-50 bg-white/80 dark:bg-surface-dark/80 backdrop-blur-xl border-b border-border-light dark:border-border-dark">
+        <div class="max-w-container mx-auto px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <!-- Logo -->
+                <a href="/" class="flex items-center gap-2">
+                    <span class="font-semibold text-lg tracking-tight text-text-light dark:text-text-dark">Falalu</span>
+                    <span class="text-muted-light dark:text-muted-dark text-lg font-light">Studio</span>
+                </a>
+                
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a href="/work.html" class="text-text-light dark:text-text-dark hover:text-black dark:hover:text-white transition-colors">Work</a>
+                    <a href="/services.html" class="text-text-light dark:text-text-dark hover:text-black dark:hover:text-white transition-colors">Services</a>
+                    <a href="/about.html" class="text-text-light dark:text-text-dark border-b-2 border-black dark:border-white pb-1 font-semibold">About</a>
+                    <a href="/process.html" class="text-text-light dark:text-text-dark hover:text-black dark:hover:text-white transition-colors">Process</a>
+                    <a href="/contact.html" class="text-text-light dark:text-text-dark hover:text-black dark:hover:text-white transition-colors">Contact</a>
+                </nav>
+                
+                <!-- Right actions -->
+                <div class="flex items-center gap-4">
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-text-light dark:text-text-dark" aria-label="Toggle dark mode">
+                        <span class="material-symbols-outlined text-xl">dark_mode</span>
+                    </button>
+                    <a href="/contact.html" class="hidden sm:inline-flex items-center justify-center rounded-full bg-black text-white px-5 py-2.5 text-sm font-medium hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition-colors">
+                        Start a Project
+                    </a>
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md hover:bg-black/5 dark:hover:bg-white/10 text-text-light dark:text-text-dark" aria-label="Menu">
+                        <span class="material-symbols-outlined text-2xl">menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white dark:bg-surface-dark backdrop-blur-2xl flex flex-col items-center justify-center gap-6 transform -translate-y-full transition-transform duration-300 md:hidden">
+        <a href="/work.html" class="text-3xl font-semibold text-text-light dark:text-text-dark">Work</a>
+        <a href="/services.html" class="text-3xl font-semibold text-text-light dark:text-text-dark">Services</a>
+        <a href="/about.html" class="text-3xl font-semibold text-text-light dark:text-text-dark">About</a>
+        <a href="/process.html" class="text-3xl font-semibold text-text-light dark:text-text-dark">Process</a>
+        <a href="/contact.html" class="text-3xl font-semibold text-text-light dark:text-text-dark">Contact</a>
+        <a href="/contact.html" class="mt-4 inline-flex items-center justify-center rounded-full bg-black text-white px-8 py-3 text-lg font-medium dark:bg-white dark:text-black">Start a Project</a>
+        <button id="mobile-close-btn" class="absolute top-6 right-6 p-2 text-text-light dark:text-text-dark" aria-label="Close menu">
+            <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+    </div>
+
+    <main class="pt-16">
+        <!-- Page Header -->
+        <section class="relative">
+            <div class="max-w-container mx-auto px-6 lg:px-8 pt-20 pb-16 md:pt-32 md:pb-24">
+                <div class="max-w-3xl">
+                    <p class="text-sm font-medium text-muted-light dark:text-muted-dark uppercase tracking-widest mb-4">About the Studio</p>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-text-light dark:text-text-dark">
+                        Architectural humanism applied to digital space.
+                    </h1>
+                    <p class="mt-6 text-lg md:text-xl text-muted-light dark:text-muted-dark max-w-2xl leading-relaxed">
+                        We believe the best digital experiences feel almost invisible — they don't demand attention, they facilitate interaction. By borrowing principles from physical architecture, we create environments that resonate emotionally and functionally.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Founder Section -->
+        <section class="py-16 md:py-24">
+            <div class="max-w-container mx-auto px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-5">
+                        <div class="relative rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-800 aspect-[4/5]">
+                            <img alt="Ishaq Ladan — Founder & Creative Director"
+                                 class="w-full h-full object-cover object-center grayscale hover:grayscale-0 transition-all duration-700 scale-105 hover:scale-100"
+                                 src="https://res.cloudinary.com/dvpt87rho/image/upload/v1787785849/Screenshot_20260827_000905_Instagram_1_gelq1f.jpg"
+                                 loading="lazy" />
+                            <div class="noise-overlay"></div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-6 lg:col-start-7">
+                        <p class="text-sm font-medium text-muted-light dark:text-muted-dark uppercase tracking-widest mb-4">Founder & Creative Director</p>
+                        <h2 class="text-3xl md:text-4xl font-bold text-text-light dark:text-text-dark">Ishaq Ladan</h2>
+                        <p class="mt-6 text-lg text-muted-light dark:text-muted-dark leading-relaxed">
+                            Ishaq founded Falalu Creative Studio with a singular vision: to merge the discipline of architectural thinking with the fluidity of digital design. His work spans luxury hospitality, fashion, real estate, and gastronomy — delivering digital experiences that are as functional as they are visually arresting.
+                        </p>
+                        <p class="mt-4 text-lg text-muted-light dark:text-muted-dark leading-relaxed">
+                            With a background in both design and technology, Ishaq leads every engagement personally, ensuring each project receives the strategic oversight and meticulous attention it deserves.
+                        </p>
+                        <div class="mt-8 flex flex-wrap gap-4">
+                            <a href="https://www.linkedin.com/in/falalu-ishaq-ladan-492157341?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener" class="inline-flex items-center justify-center rounded-full border border-gray-300 dark:border-gray-600 text-text-light dark:text-text-dark px-6 py-3 text-sm font-medium hover:border-black dark:hover:border-white transition-colors">
+                                Connect on LinkedIn
+                            </a>
+                            <a href="mailto:falaluladan736@gmail.com" class="inline-flex items-center justify-center rounded-full border border-gray-300 dark:border-gray-600 text-text-light dark:text-text-dark px-6 py-3 text-sm font-medium hover:border-black dark:hover:border-white transition-colors">
+                                Email Ishaq
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Philosophy Section -->
+        <section class="py-16 md:py-24 bg-gray-50 dark:bg-surface-dark/50">
+            <div class="max-w-container mx-auto px-6 lg:px-8">
+                <div class="max-w-3xl">
+                    <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-text-light dark:text-text-dark">
+                        Our Philosophy
+                    </h2>
+                    <p class="mt-6 text-lg text-muted-light dark:text-muted-dark leading-relaxed">
+                        Beautiful is good. Useful is better. Beautiful + useful is the goal.
+                    </p>
+                </div>
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="p-8 rounded-xl bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark">
+                        <div class="w-10 h-10 rounded-full bg-black dark:bg-white flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-white dark:text-black text-xl">architecture</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-text-light dark:text-text-dark mb-2">Proportion</h3>
+                        <p class="text-muted-light dark:text-muted-dark leading-relaxed">
+                            We use grid systems, spacing scales, and typographic rhythm to create layouts that feel balanced and intentional.
+                        </p>
+                    </div>
+                    <div class="p-8 rounded-xl bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark">
+                        <div class="w-10 h-10 rounded-full bg-black dark:bg-white flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-white dark:text-black text-xl">light_mode</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-text-light dark:text-text-dark mb-2">Light & Space</h3>
+                        <p class="text-muted-light dark:text-muted-dark leading-relaxed">
+                            Whitespace is not empty — it's a design element. We use it to create focus, hierarchy, and calm.
+                        </p>
+                    </div>
+                    <div class="p-8 rounded-xl bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark">
+                        <div class="w-10 h-10 rounded-full bg-black dark:bg-white flex items-center justify-center mb-6">
+                            <span class="material-symbols-outlined text-white dark:text-black text-xl">handshake</span>
+                        </div>
+                        <h3 class="text-lg font-semibold text-text-light dark:text-text-dark mb-2">Human-Centric</h3>
+                        <p class="text-muted-light dark:text-muted-dark leading-relaxed">
+                            Every decision is filtered through the question: "Does this improve the user's experience?"
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Toolkit / Capabilities -->
+        <section class="py-16 md:py-24">
+            <div class="max-w-container mx-auto px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-text-light dark:text-text-dark">
+                            Our Toolkit
+                        </h2>
+                        <p class="mt-6 text-lg text-muted-light dark:text-muted-dark leading-relaxed max-w-md">
+                            We combine modern frameworks with a rigorous design process to build experiences that are fast, scalable, and future-proof.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-6 rounded-xl bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark">
+                            <h3 class="font-semibold text-text-light dark:text-text-dark">Next.js</h3>
+                            <p class="text-sm text-muted-light dark:text-muted-dark mt-1">React framework</p>
+                        </div>
+                        <div class="p-6 rounded-xl bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark">
+                            <h3 class="font-semibold text-text-light dark:text-text-dark">TypeScript</h3>
+                            <p class="text-sm text-muted-light dark:text-muted-dark mt-1">Type safety</p>
+                        </div>
+                        <div class="p-6 rounded-xl bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark">
+                            <h3 class="font-semibold text-text-light dark:text-text-dark">Tailwind CSS</h3>
+                            <p class="text-sm text-muted-light dark:text-muted-dark mt-1">Utility-first</p>
+                        </div>
+                        <div class="p-6 rounded-xl bg-white dark:bg-surface-dark border border-border-light dark:border-border-dark">
+                            <h3 class="font-semibold text-text-light dark:text-text-dark">Framer Motion</h3>
+                            <p class="text-sm text-muted-light dark:text-muted-dark mt-1">Animation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-24 md:py-32 bg-gray-50 dark:bg-surface-dark/50">
+            <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-text-light dark:text-text-dark">
+                    Let's build together.
+                </h2>
+                <p class="mt-6 text-lg text-muted-light dark:text-muted-dark">
+                    Have a project that demands precision and creativity? We'd love to hear about it.
+                </p>
+                <a href="/contact.html" class="mt-10 inline-flex items-center justify-center rounded-full bg-black text-white px-10 py-4 text-base font-medium hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition-colors">
+                    Start a Project
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-16">
+        <div class="max-w-container mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
+            <div>
+                <div class="text-2xl font-semibold">Falalu Creative Studio</div>
+                <p class="text-gray-400 text-sm mt-2 max-w-md">
+                    © 2024 Falalu Creative Studio. All rights reserved. Built with architectural humanism.
+                </p>
+            </div>
+            <div class="flex flex-wrap gap-x-8 gap-y-4 text-sm">
+                <a href="https://wa.me/2348065883643" target="_blank" rel="noopener" class="text-gray-300 hover:text-white transition-colors">WhatsApp</a>
+                <a href="mailto:falaluladan736@gmail.com" class="text-gray-300 hover:text-white transition-colors">Mail</a>
+                <a href="https://x.com/ladan_falalu0" target="_blank" rel="noopener" class="text-gray-300 hover:text-white transition-colors">X</a>
+                <a href="https://www.instagram.com/ladan____falalu?igsi=MXF4OWQ2emVxdmF1cw==" target="_blank" rel="noopener" class="text-gray-300 hover:text-white transition-colors">Instagram</a>
+                <a href="https://www.tiktok.com/@ladan_falalu?_r=1&_t=ZS-99GGYIGiZRH" target="_blank" rel="noopener" class="text-gray-300 hover:text-white transition-colors">TikTok</a>
+                <a href="https://www.linkedin.com/in/falalu-ishaq-ladan-492157341?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener" class="text-gray-300 hover:text-white transition-colors">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const root = document.documentElement;
+        
+        function getStoredTheme() {
+            try {
+                return localStorage.getItem('theme') || 'dark';
+            } catch (e) {
+                return 'dark';
+            }
+        }
+        function setStoredTheme(theme) {
+            try {
+                localStorage.setItem('theme', theme);
+            } catch (e) {}
+        }
+        
+        const storedTheme = getStoredTheme();
+        root.classList.toggle('dark', storedTheme === 'dark');
+        updateThemeIcon(storedTheme === 'dark');
+        
+        themeToggle?.addEventListener('click', () => {
+            const isDark = root.classList.toggle('dark');
+            setStoredTheme(isDark ? 'dark' : 'light');
+            updateThemeIcon(isDark);
+        });
+        
+        function updateThemeIcon(isDark) {
+            if (!themeToggle) return;
+            const icon = themeToggle.querySelector('.material-symbols-outlined');
+            if (icon) icon.textContent = isDark ? 'light_mode' : 'dark_mode';
+        }
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileCloseBtn = document.getElementById('mobile-close-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        function toggleMobileMenu(open) {
+            if (open) {
+                mobileMenu.style.transform = 'translateY(0)';
+            } else {
+                mobileMenu.style.transform = 'translateY(-100%)';
+            }
+        }
+        
+        mobileMenuBtn?.addEventListener('click', () => {
+            const isOpen = mobileMenu.style.transform === 'translateY(0px)' || mobileMenu.style.transform === 'translateY(0)';
+            toggleMobileMenu(!isOpen);
+        });
+        
+        mobileCloseBtn?.addEventListener('click', () => toggleMobileMenu(false));
+        
+        mobileMenu?.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => toggleMobileMenu(false));
+        });
+    </script>
+</body>
+</html>
