@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Process — Falalu Creative Studio</title>
+    <meta name="description" content="Our proven process: discover, define, design, develop, and launch. A structured journey that ensures clarity and exceptional results." />
+    
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Process — Falalu Creative Studio" />
+    <meta property="og:description" content="A structured journey from discovery to launch, ensuring clarity and exceptional results." />
+    <meta property="og:image" content="https://res.cloudinary.com/dvpt87rho/image/upload/v1787785849/Screenshot_20260827_000905_Instagram_1_gelq1f.jpg" />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⬛</text></svg>" />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
+    
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    },
+                    colors: {
+                        canvas: {
+                            light: '#fafafa',
+                            dark: '#0a0a0a',
+                        },
+                        surface: {
+                            light: '#ffffff',
+                            dark: '#111111',
+                        },
+                        border: {
+                            light: '#e5e5e5',
+                            dark: '#262626',
+                        },
+                        text: {
+                            light: '#171717',
+                            dark: '#ededed',
+                        },
+                        muted: {
+                            light: '#737373',
+                            dark: '#a3a3a3',
+                        },
+                    },
+                    spacing: {
+                        '18': '4.5rem',
+                        '22': '5.5rem',
+                        '30': '7.5rem',
+                    },
+                    maxWidth: {
+                        'container': '1280px',
+                    },
+                    borderRadius: {
+                        'xl': '1rem',
+                        '2xl': '1.5rem',
+                    },
+                },
+            },
+        }
+    </script>
+    
+    <style>
+        body {
+            font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+        }
+        .noise-overlay {
+            position: absolute; inset: 0;
+            background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22 opacity=%220.015%22/%3E%3C/svg%3E');
+            pointer-events: none;
+            mix-blend-mode: multiply;
+        }
+        .transition-smooth {
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="bg-canvas-light dark:bg-canvas-dark text-text-light dark:text-text-dark font-sans antialiased min-h-screen selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
+    <!-- Navigation -->
+    <header class="fixed top-0 inset-x-0 z-50 bg-white/80 dark:bg-surface-dark/80 backdrop-blur-xl border-b border-border-light dark:border-border-dark">
+        <div class="max-w-container mx-auto px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <!-- Logo -->
+                <a href="/" class="flex items-center gap-2">
+                    <span class="font-semibold text-lg tracking-tight text-text-light dark:text-text-dark">Falalu</span>
+                    <span class="text-muted-light dark:text-muted-dark text-lg font-light">Studio</span>
+                </a>
+                
+                <!-- Desktop Nav -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a href="/work.html" class="text-text-light dark:text-text-dark hover:text-black dark:hover:text-white transition-colors">Work</a>
+                    <a href="/services.html" class="text-text-light dark:text-text-dark hover:text-black dark:hover:text-white transition-colors">Services</a>
+                    <a href="/about.html" class="text-text-light dark:text-text-dark hover:text-black dark:hover:text-white transition-colors">About</a>
+                    <a href="/process.html" class="text-text-light dark:text-text-dark border-b-2 border-black dark:border-white pb-1 font-semibold">Process</a>
+                    <a href="/contact.html" class="text-text-light dark:text-text-dark hover:text-black dark:hover:text-white transition-colors">Contact</a>
+                </nav>
+                
+                <!-- Right actions -->
+                <div class="flex items-center gap-4">
+                    <button id="theme-toggle" class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors text-text-light dark:text-text-dark" aria-label="Toggle dark mode">
+                        <span class="material-symbols-outlined text-xl">dark_mode</span>
+                    </button>
+                    <a href="/contact.html" class="hidden sm:inline-flex items-center justify-center rounded-full bg-black text-white px-5 py-2.5 text-sm font-medium hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition-colors">
+                        Start a Project
+                    </a>
+                    <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md hover:bg-black/5 dark:hover:bg-white/10 text-text-light dark:text-text-dark" aria-label="Menu">
+                        <span class="material-symbols-outlined text-2xl">menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white dark:bg-surface-dark backdrop-blur-2xl flex flex-col items-center justify-center gap-6 transform -translate-y-full transition-transform duration-300 md:hidden">
+        <a href="/work.html" class="text-3xl font-semibold text-text-light dark:text-text-dark">Work</a>
+        <a href="/services.html" class="text-3xl font-semibold text-text-light dark:text-text-dark">Services</a>
+        <a href="/about.html" class="text-3xl font-semibold text-text-light dark:text-text-dark">About</a>
+        <a href="/process.html" class="text-3xl font-semibold text-text-light dark:text-text-dark">Process</a>
+        <a href="/contact.html" class="text-3xl font-semibold text-text-light dark:text-text-dark">Contact</a>
+        <a href="/contact.html" class="mt-4 inline-flex items-center justify-center rounded-full bg-black text-white px-8 py-3 text-lg font-medium dark:bg-white dark:text-black">Start a Project</a>
+        <button id="mobile-close-btn" class="absolute top-6 right-6 p-2 text-text-light dark:text-text-dark" aria-label="Close menu">
+            <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+    </div>
+
+    <main class="pt-16">
+        <!-- Page Header -->
+        <section class="relative">
+            <div class="max-w-container mx-auto px-6 lg:px-8 pt-20 pb-16 md:pt-32 md:pb-24">
+                <div class="max-w-3xl">
+                    <p class="text-sm font-medium text-muted-light dark:text-muted-dark uppercase tracking-widest mb-4">How We Work</p>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight text-text-light dark:text-text-dark">
+                        A proven process, refined over time.
+                    </h1>
+                    <p class="mt-6 text-lg md:text-xl text-muted-light dark:text-muted-dark max-w-2xl leading-relaxed">
+                        Every engagement follows a structured journey — from discovery through launch — ensuring clarity, alignment, and exceptional results.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="pb-24 md:pb-32">
+            <div class="max-w-container mx-auto px-6 lg:px-8">
+                <!-- Step 1: Discover -->
+                <div class="group border-t border-border-light dark:border-border-dark py-12 md:py-16">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                        <div class="lg:col-span-3">
+                            <span class="text-5xl md:text-6xl font-bold text-muted-light dark:text-muted-dark">01</span>
+                        </div>
+                        <div class="lg:col-span-6">
+                            <h2 class="text-2xl md:text-3xl font-bold text-text-light dark:text-text-dark">Discover</h2>
+                            <p class="mt-4 text-lg text-muted-light dark:text-muted-dark leading-relaxed">
+                                We begin by deeply understanding your brand, your market, and the people you aim to connect with. Through workshops and research, we uncover the insights that will shape the entire project.
+                            </p>
+                        </div>
+                        <div class="lg:col-span-3 flex flex-col gap-2">
+                            <span class="text-sm font-medium text-muted-light dark:text-muted-dark">Key Activities</span>
+                            <p class="text-muted-light dark:text-muted-dark">Stakeholder interviews</p>
+                            <p class="text-muted-light dark:text-muted-dark">Audience research</p>
+                            <p class="text-muted-light dark:text-muted-dark">Competitive analysis</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Define -->
+                <div class="group border-t border-border-light dark:border-border-dark py-12 md:py-16">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                        <div class="lg:col-span-3">
+                            <span class="text-5xl md:text-6xl font-bold text-muted-light dark:text-muted-dark">02</span>
+                        </div>
+                        <div class="lg:col-span-6">
+                            <h2 class="text-2xl md:text-3xl font-bold text-text-light dark:text-text-dark">Define</h2>
+                            <p class="mt-4 text-lg text-muted-light dark:text-muted-dark leading-relaxed">
+                                We synthesize our findings into a clear roadmap, establishing the information architecture, technical requirements, and strategic creative direction. This becomes the blueprint for the entire project.
+                            </p>
+                        </div>
+                        <div class="lg:col-span-3 flex flex-col gap-2">
+                            <span class="text-sm font-medium text-muted-light dark:text-muted-dark">Key Activities</span>
+                            <p class="text-muted-light dark:text-muted-dark">Sitemap &amp; IA</p>
+                            <p class="text-muted-light dark:text-muted-dark">Content strategy</p>
+                            <p class="text-muted-light dark:text-muted-dark">Technical scoping</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Design -->
+                <div class="group border-t border-border-light dark:border-border-dark py-12 md:py-16">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                        <div class="lg:col-span-3">
+                            <span class="text-5xl md:text-6xl font-bold text-muted-light dark:text-muted-dark">03</span>
+                        </div>
+                        <div class="lg:col-span-6">
+                            <h2 class="text-2xl md:text-3xl font-bold text-text-light dark:text-text-dark">Design</h2>
+                            <p class="mt-4 text-lg text-muted-light dark:text-muted-dark leading-relaxed">
+                                We craft the visual experience — laying out interfaces that balance rigorous technical precision with organic, expressive layouts. Iterative prototypes and design reviews ensure alignment at every step.
+                            </p>
+                        </div>
+                        <div class="lg:col-span-3 flex flex-col gap-2">
+                            <span class="text-sm font-medium text-muted-light dark:text-muted-dark">Key Activities</span>
+                            <p class="text-muted-light dark:text-muted-dark">Wireframes</p>
+                            <p class="text-muted-light dark:text-muted-dark">High-fidelity UI</p>
+                            <p class="text-muted-light dark:text-muted-dark">Interactive prototypes</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Develop -->
+                <div class="group border-t border-border-light dark:border-border-dark py-12 md:py-16">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                        <div class="lg:col-span-3">
+                            <span class="text-5xl md:text-6xl font-bold text-muted-light dark:text-muted-dark">04</span>
+                        </div>
+                        <div class="lg:col-span-6">
+                            <h2 class="text-2xl md:text-3xl font-bold text-text-light dark:text-text-dark">Develop</h2>
+                            <p class="mt-4 text-lg text-muted-light dark:text-muted-dark leading-relaxed">
+                                Our engineers bring the design to life with clean, maintainable code. We focus on performance, accessibility, and responsive behavior — ensuring the experience feels flawless on every device.
+                            </p>
+                        </div>
+                        <div class="lg:col-span-3 flex flex-col gap-2">
+                            <span class="text-sm font-medium text-muted-light dark:text-muted-dark">Key Activities</span>
+                            <p class="text-muted-light dark:text-muted-dark">Front-end build</p>
+                            <p class="text-muted-light dark:text-muted-dark">CMS integration</p>
+                            <p class="text-muted-light dark:text-muted-dark">QA testing</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 5: Launch -->
+                <div class="group border-t border-border-light dark:border-border-dark py-12 md:py-16">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                        <div class="lg:col-span-3">
+                            <span class="text-5xl md:text-6xl font-bold text-muted-light dark:text-muted-dark">05</span>
+                        </div>
+                        <div class="lg:col-span-6">
+                            <h2 class="text-2xl md:text-3xl font-bold text-text-light dark:text-text-dark">Launch</h2>
+                            <p class="mt-4 text-lg text-muted-light dark:text-muted-dark leading-relaxed">
+                                We deploy with confidence and monitor performance. Post-launch support and optimization ensure your digital product continues to deliver results long after it goes live.
+                            </p>
+                        </div>
+                        <div class="lg:col-span-3 flex flex-col gap-2">
+                            <span class="text-sm font-medium text-muted-light dark:text-muted-dark">Key Activities</span>
+                            <p class="text-muted-light dark:text-muted-dark">Deployment</p>
+                            <p class="text-muted-light dark:text-muted-dark">Analytics setup</p>
+                            <p class="text-muted-light dark:text-muted-dark">Ongoing support</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-24 md:py-32 bg-gray-50 dark:bg-surface-dark/50">
+            <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+                <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-text-light dark:text-text-dark">
+                    Ready to start your journey?
+                </h2>
+                <p class="mt-6 text-lg text-muted-light dark:text-muted-dark">
+                    Let's talk about how we can apply this process to your next project.
+                </p>
+                <a href="/contact.html" class="mt-10 inline-flex items-center justify-center rounded-full bg-black text-white px-10 py-4 text-base font-medium hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition-colors">
+                    Start the Conversation
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-16">
+        <div class="max-w-container mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
+            <div>
+                <div class="text-2xl font-semibold">Falalu Creative Studio</div>
+                <p class="text-gray-400 text-sm mt-2 max-w-md">
+                    © 2024 Falalu Creative Studio. All rights reserved. Built with architectural humanism.
+                </p>
+            </div>
+            <div class="flex flex-wrap gap-x-8 gap-y-4 text-sm">
+                <a href="https://wa.me/2348065883643" target="_blank" rel="noopener" class="text-gray-300 hover:text-white transition-colors">WhatsApp</a>
+                <a href="mailto:falaluladan736@gmail.com" class="text-gray-300 hover:text-white transition-colors">Mail</a>
+                <a href="https://x.com/ladan_falalu0" target="_blank" rel="noopener" class="text-gray-300 hover:text-white transition-colors">X</a>
+                <a href="https://www.instagram.com/ladan____falalu?igsi=MXF4OWQ2emVxdmF1cw==" target="_blank" rel="noopener" class="text-gray-300 hover:text-white transition-colors">Instagram</a>
+                <a href="https://www.tiktok.com/@ladan_falalu?_r=1&_t=ZS-99GGYIGiZRH" target="_blank" rel="noopener" class="text-gray-300 hover:text-white transition-colors">TikTok</a>
+                <a href="https://www.linkedin.com/in/falalu-ishaq-ladan-492157341?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener" class="text-gray-300 hover:text-white transition-colors">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const root = document.documentElement;
+        
+        function getStoredTheme() {
+            try {
+                return localStorage.getItem('theme') || 'dark';
+            } catch (e) {
+                return 'dark';
+            }
+        }
+        function setStoredTheme(theme) {
+            try {
+                localStorage.setItem('theme', theme);
+            } catch (e) {}
+        }
+        
+        const storedTheme = getStoredTheme();
+        root.classList.toggle('dark', storedTheme === 'dark');
+        updateThemeIcon(storedTheme === 'dark');
+        
+        themeToggle?.addEventListener('click', () => {
+            const isDark = root.classList.toggle('dark');
+            setStoredTheme(isDark ? 'dark' : 'light');
+            updateThemeIcon(isDark);
+        });
+        
+        function updateThemeIcon(isDark) {
+            if (!themeToggle) return;
+            const icon = themeToggle.querySelector('.material-symbols-outlined');
+            if (icon) icon.textContent = isDark ? 'light_mode' : 'dark_mode';
+        }
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileCloseBtn = document.getElementById('mobile-close-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        function toggleMobileMenu(open) {
+            if (open) {
+                mobileMenu.style.transform = 'translateY(0)';
+            } else {
+                mobileMenu.style.transform = 'translateY(-100%)';
+            }
+        }
+        
+        mobileMenuBtn?.addEventListener('click', () => {
+            const isOpen = mobileMenu.style.transform === 'translateY(0px)' || mobileMenu.style.transform === 'translateY(0)';
+            toggleMobileMenu(!isOpen);
+        });
+        
+        mobileCloseBtn?.addEventListener('click', () => toggleMobileMenu(false));
+        
+        mobileMenu?.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => toggleMobileMenu(false));
+        });
+    </script>
+</body>
+</html>
